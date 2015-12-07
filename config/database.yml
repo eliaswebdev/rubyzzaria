@@ -1,0 +1,24 @@
+
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  host: 127.0.0.1
+  # socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: rubyzzaria_development
+
+test:
+  <<: *default
+  database: rubyzzaria_test
+
+
+production:
+  <<: *default
+  database: rubyzzaria_production
+  username: rubyzzaria
+  password: <%= ENV['RUBYZZARIA_DATABASE_PASSWORD'] %>

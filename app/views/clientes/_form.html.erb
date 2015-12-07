@@ -1,0 +1,9 @@
+<%= simple_form_for @cliente do |f| %>
+  <%= f.input :nome %>
+  <%= f.input :telefone %>
+  <%= f.input :endereco %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                clientes_path, :class => 'btn btn-default' %>
+<% end %>
