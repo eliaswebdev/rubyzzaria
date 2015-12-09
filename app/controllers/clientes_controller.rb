@@ -4,7 +4,11 @@ class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.json
   def index
-    @clientes = Cliente.all
+    if params[:search]
+      @clientes = Cliente.search(params[:search]).page(params[:pagina])
+    else
+      @clientes = Cliente.page(params[:pagina])      
+    end
   end
 
   # GET /clientes/1
@@ -69,6 +73,6 @@ class ClientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cliente_params
-      params.require(:cliente).permit(:nome, :telefone, :endereco)
+      params.require(:cliente).permit(:nome, :telefone, :endereco, :email)
     end
 end

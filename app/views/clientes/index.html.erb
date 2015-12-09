@@ -3,11 +3,26 @@
   <%= link_to t('.new', :default => t("helpers.links.new")), new_cliente_path, :class => 'btn btn-primary pull-right' %>
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+
+<div class="well well-sm search">
+	<div class="pull-right pg">
+		<%= paginate @clientes %>
+	</div>
+
+	<%= form_tag nil, method: :get, class: 'form-inline' do %>
+		<%= text_field_tag :search, params[:search], placeholder: 'busca pelo nome', class: 'form-control' %>
+		<%= submit_tag 'Buscar', class: 'btn btn-primary' %>
+	<% end %>
+
+</div>
+
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:nome) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:telefone) %></th>
       <th><%= model_class.human_attribute_name(:endereco) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -19,6 +34,7 @@
       <tr>
         <td><%= link_to cliente.id, cliente_path(cliente) %></td>
         <td><%= cliente.nome %></td>
+        <td><%= cliente.email %></td>
         <td><%= cliente.telefone %></td>
         <td><%= cliente.endereco %></td>
         <td><%=l cliente.created_at %></td>
@@ -35,4 +51,11 @@
     <% end %>
   </tbody>
 </table>
+  
+<div class="text-center">
+  <%= paginate @clientes %>
+</div>
 
+<div class="text-center">
+  <%= page_entries_info @clientes, :entry_name => 'item' %>
+</div>
