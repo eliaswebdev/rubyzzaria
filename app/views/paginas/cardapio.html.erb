@@ -1,0 +1,25 @@
+<div class="page-header">
+	<h1>Cardápio</h1>
+</div>
+
+<% @categorias.each do |categoria| %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= categoria.nome %> | Pizza Média: <%= categoria.preco_media %> | Pizza Grande: <%= categoria.preco_grande %></h3>
+  </div>
+
+  <div class="panel-body">
+  	<ul>
+    <% categoria.pizzas.each do |pizza| %>
+    	<li>
+    		<h4><%= pizza.sabor %></h4>
+    		<p><%= pizza.cobertura %></p>
+    	</li>
+    <% end %>	
+  	</ul>
+  </div>
+</div>
+<% end %>
+
+

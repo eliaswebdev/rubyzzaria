@@ -11,3 +11,8 @@ pt-BR:
                 endereco: Endereço
                 created_at: Cadastrado em
                 updated_at: Atualizado em
+
+            user: 
+                email: E-mail
+                password: Senha
+                remember_me: Lembre-me

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  categoria_id: 
+  sabor: MyString
+  cobertura: MyText
+  status: 1
+
+two:
+  categoria_id: 
+  sabor: MyString
+  cobertura: MyText
+  status: 1

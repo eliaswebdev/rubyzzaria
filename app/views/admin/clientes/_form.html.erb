@@ -2,7 +2,7 @@
 </div>
 
 <div class="col-lg-4">
-	<%= simple_form_for @cliente do |f| %>
+	<%= simple_form_for [:admin, @cliente] do |f| %>
 	  <%= f.input :nome, input_html: {required: :required} %>
 	  <%= f.input :email %>
 	  <%= f.input :telefone %>
@@ -10,7 +10,7 @@
 
 	  <%= f.button :submit, :class => 'btn-primary' %>
 	  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-	                clientes_path, :class => 'btn btn-default' %>
+	                admin_clientes_path, :class => 'btn btn-default' %>
 	<% end %>
 </div>
 <div class="col-lg-4">

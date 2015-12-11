@@ -6,7 +6,7 @@ class Cliente < ActiveRecord::Base
 	validates :email, uniqueness: true
 	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 	validates :nome, length: { minimum: 9 }
-	validates :endereco, length: { minimum: 20, maximum: 80 }
+	validates :endereco, length: { minimum: 10, maximum: 80 }
 
 	## SCOPES
 	

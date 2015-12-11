@@ -38,17 +38,18 @@
   </head>
   <body>
 
-    <div class="navbar navbar-default navbar-red navbar-static-top">
+    <div class="navbar navbar-default navbar-admin navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Rubyzzaria</a>
+        <a class="navbar-brand" href="/">Admin / Rubyzzaria</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Cardápio", cardapio_path  %></li>
+            <li><%= link_to "Clientes", admin_clientes_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
       </div>
